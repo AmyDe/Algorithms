@@ -7,7 +7,7 @@ public class TimingTests {
 
     public static void main(String[] args) {
 
-        for (int size = 10; size < 10000; size += (10000/100)) {
+        for (int size = 5000; size <= 100000; size += (100000/100)) {
             int[] testArr = createShufArray(size);
 
             long startTime = System.nanoTime();
@@ -27,6 +27,14 @@ public class TimingTests {
             myArr[i] = i + 1;
         }
         Collections.shuffle(Arrays.asList(myArr));
+        return myArr;
+    }
+
+    private static int[] createArray(int size) {
+        int[] myArr = new int[size];
+        for (int i = 0; i < size; i++) {
+            myArr[i] = i + 1;
+        }
         return myArr;
     }
 }
